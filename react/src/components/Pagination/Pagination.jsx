@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import './Pagination.scss';
 
 function Pagination({ totalPages, currentPage, onPageChange }) {
   const generatePageNumbers = () => {

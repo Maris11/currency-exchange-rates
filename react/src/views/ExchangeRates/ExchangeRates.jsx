@@ -44,12 +44,12 @@ function ExchangeRates() {
   };
 
   return (
-    <div>
-      <div className="heading">1 EUR to { currency } Exchange Rate</div>
+    <div className="exchange-rates">
       { error && <div className="error">{ error }</div> }
 
       { rates &&
-        <div>
+        <div className="rates-container">
+          <div className="heading">1 EUR to { currency } Exchange Rate</div>
           <div className="updated">Last updated: {format(new Date(lastUpdate), 'dd.MM.yyyy')}</div>
           <Pagination
             totalPages={ totalPages }
@@ -63,8 +63,9 @@ function ExchangeRates() {
             onPageChange={handlePageChange}
           />
           <div className="stats">
-            Minimum: {minRate.toFixed(4)} {currency}
+            Minimum: {minRate.toFixed(4)} {currency},
             Maximum: {maxRate.toFixed(4)} {currency}
+            <br/>
             Average: {avgRate.toFixed(4)} {currency}
           </div>
         </div>

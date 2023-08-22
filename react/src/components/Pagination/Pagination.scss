@@ -1,0 +1,27 @@
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+
+  * {
+    cursor: pointer;
+  }
+
+  .pagination-number {
+    margin-left: 5px;
+  }
+
+  .active{
+    font-weight: bold;
+  }
+
+  :nth-child(2) {
+    margin-left: 0;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}

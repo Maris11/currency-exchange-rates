@@ -13,10 +13,10 @@ class RateController extends Controller
     public function fetch(Request $request, $currency)
     {
         $rates = Rate::where('currency', $currency)
-            ->paginate(5);
+            ->paginate(10);
 
         if (!sizeof($rates)) {
-            return response('Currency not found',Response::HTTP_NOT_FOUND);
+            return response('404: Currency not found',Response::HTTP_NOT_FOUND);
         }
 
         $aggregates = Rate::where('currency', $currency)

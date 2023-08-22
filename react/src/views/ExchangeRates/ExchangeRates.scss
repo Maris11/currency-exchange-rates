@@ -1,0 +1,40 @@
+@import '../../sassStyles/variables';
+
+.exchange-rates {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  .error {
+    color: $error;
+    font-size: 20px;
+  }
+
+  .rates-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: $textColor;
+
+    .heading {
+      font-size: 30px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+
+    .updated {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    .stats {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
