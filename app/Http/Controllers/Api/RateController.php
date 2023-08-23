@@ -12,7 +12,11 @@ class RateController extends Controller
 {
     public function fetch(Request $request, $currency)
     {
+        $sortColumn = $request->get('sort_column', 'created_at');
+        $sortOrder = $request->get('sort_order', 'desc');
+
         $rates = Rate::where('currency', $currency)
+            ->orderBy($sortColumn, $sortOrder)
             ->paginate(10);
 
         if (!sizeof($rates)) {

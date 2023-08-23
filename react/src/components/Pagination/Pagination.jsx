@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import './Pagination.scss';
+import "./Pagination.scss";
 
 function Pagination({ totalPages, currentPage, onPageChange }) {
   const generatePageNumbers = () => {
@@ -40,14 +40,20 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
   return (
     <div className="pagination">
       <button
-        onClick={() => {onPageChange(currentPage - 1)}}
+        onClick={() => {
+          onPageChange(currentPage - 1);
+        }}
         disabled={currentPage < 2}
-      >&lt;</button>
+      >
+        &lt;
+      </button>
       {generatePageNumbers().map((pageNumber, index) => (
         <span
           key={index}
           className={
-            pageNumber === currentPage ? "pagination-number active" : "pagination-number"
+            pageNumber === currentPage
+              ? "pagination-number active"
+              : "pagination-number"
           }
           onClick={() => {
             if (typeof pageNumber === "number") {
@@ -59,9 +65,13 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
         </span>
       ))}
       <button
-        onClick={() => {onPageChange(currentPage + 1)}}
+        onClick={() => {
+          onPageChange(currentPage + 1);
+        }}
         disabled={currentPage === totalPages}
-      >&gt;</button>
+      >
+        &gt;
+      </button>
     </div>
   );
 }
